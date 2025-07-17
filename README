@@ -1,0 +1,3 @@
+This is my little Gentoo overlay. It (by now) only has two packages:
+- app-i18n/ibus-bamboo: m17n isn't good enough on terminal, so.. yeah.
+- sys-libs/musl: Chimera's patched version, with mimalloc in place of mallocng.

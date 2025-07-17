@@ -1,0 +1,12 @@
+BDEPEND=app-i18n/ibus dev-lang/go x11-libs/libX11 x11-libs/libXtst dev-build/make dev-lang/go
+DEFINED_PHASES=-
+DEPEND=app-i18n/ibus dev-lang/go x11-libs/libX11 x11-libs/libXtst
+DESCRIPTION=A Vietnamese IME for IBus
+EAPI=8
+HOMEPAGE=https://github.com/BambooEngine/ibus-bamboo
+KEYWORDS=-* ~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=app-i18n/ibus dev-lang/go
+SLOT=0
+SRC_URI=https://github.com/BambooEngine/ibus-bamboo/archive/v0.8.4-RC6.tar.gz -> ibus-bamboo-0.8.4_rc6.tar.gz
+_md5_=4f8bda34d9db4030d2c607c90dba204a
