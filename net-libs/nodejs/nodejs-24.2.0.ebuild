@@ -119,9 +119,10 @@ src_configure() {
 	xdg_environment_reset
 
 	# LTO compiler flags are handled by configure.py itself
-	filter-lto
+	#filter-lto
 	# The warnings are *so* noisy and make build.logs massive
 	append-cxxflags $(test-flags-CXX -Wno-template-id-cdtor)
+	append-cxxflags $(test-flags-CXX -Wno-nullability-completeness)
 	# https://bugs.gentoo.org/931514
 	use arm64 && append-flags $(test-flags-CXX -mbranch-protection=none)
 
