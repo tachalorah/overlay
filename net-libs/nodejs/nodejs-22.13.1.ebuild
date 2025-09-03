@@ -57,7 +57,8 @@ BDEPEND="${PYTHON_DEPS}
 DEPEND="${RDEPEND}"
 
 PATCHES="
-	${FILESDIR}/no-libatomic.patch
+	${FILESDIR}/no-libatomic-22.13.1.patch
+	${FILESDIR}/nodejs-22.12.0-paxmarking.patch
 	"
 
 # These are measured on a loong machine with -ggdb on, and only checked
@@ -118,11 +119,8 @@ src_prepare() {
 src_configure() {
 	xdg_environment_reset
 
-	# LTO compiler flags are handled by configure.py itself
-	#filter-lto
 	# The warnings are *so* noisy and make build.logs massive
 	append-cxxflags $(test-flags-CXX -Wno-template-id-cdtor)
-	append-cxxflags $(test-flags-CXX -Wno-nullability-completeness)
 	# https://bugs.gentoo.org/931514
 	use arm64 && append-flags $(test-flags-CXX -mbranch-protection=none)
 
