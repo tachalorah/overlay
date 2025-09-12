@@ -1,5 +1,5 @@
 This is my little Gentoo overlay. It (by now) provides these packages:
-- app-i18n/ibus-bamboo: m17n isn't good enough on terminal, so.. yeah.
+- app-i18n/ibus-lotus: maintained fork of ibus-bamboo.
 - net-libs/nodejs: ebuild modded to build without GCC. Building with GCC using
   this ebuild is not tested.
 - sys-libs/musl: Chimera's patched version, with mimalloc in place of mallocng.
