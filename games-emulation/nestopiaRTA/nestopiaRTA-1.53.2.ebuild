@@ -8,15 +8,26 @@ inherit autotools xdg
 DESCRIPTION="Portable Nintendo Entertainment System emulator written in C++ (with framecounter and input display)"
 HOMEPAGE="https://github.com/108Pi/nestopiaRTA"
 SRC_URI="
-	https://github.com/108Pi/nestopiaRTA/archive/refs/tags/${PV}.tar.gz
+	https://github.com/0ldsk00l/nestopia/archive/refs/tags/${PV}.tar.gz
 		-> ${P}.tar.gz
+"
+
+PATCHES="
+	${FILESDIR}/0001-Added-input-display-with-frame-counter.patch
+	${FILESDIR}/0002-Fixed-rewinding.patch
+	${FILESDIR}/0003-Added-customizable-timer.patch
+	${FILESDIR}/0004-Update-README.md.patch
+	${FILESDIR}/0005-Update-README.md.patch
+	${FILESDIR}/0006-More-timer-features-fixed-pal.patch
+	${FILESDIR}/0007-Update-README.md.patch
+	${FILESDIR}/0008-Makefile.am-fix-missing-NstRunTimer.cpp.patch
 "
 
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
-S="${WORKDIR}/nestopiaRTA-${PV}"
+S="${WORKDIR}/nestopia-${PV}"
 
 RDEPEND="
 	app-arch/libarchive:=
