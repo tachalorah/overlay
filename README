@@ -1,5 +1,7 @@
 This is my little Gentoo overlay. It (by now) provides these packages:
 - app-i18n/ibus-lotus: maintained fork of ibus-bamboo.
+- games-emulation/nestopiarta: 108Pi's fork of Nestopia UE with frame counter
+  and input display
 - net-libs/nodejs: ebuild modded to build without GCC. Building with GCC using
   this ebuild is not tested.
 - sys-libs/musl: Chimera's patched version, with mimalloc in place of mallocng.
