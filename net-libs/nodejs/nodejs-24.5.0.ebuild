@@ -40,7 +40,7 @@ RDEPEND=">=app-arch/brotli-1.1.0:=
 	>=net-dns/c-ares-1.34.4:=
 	>=net-libs/nghttp2-1.64.0:=
 	>=net-libs/nghttp3-1.7.0:=
-	sys-libs/zlib
+	virtual/zlib
 	corepack? ( !sys-apps/yarn )
 	system-icu? ( >=dev-libs/icu-73:= )
 	system-ssl? (
@@ -119,7 +119,7 @@ src_configure() {
 	xdg_environment_reset
 
 	# LTO compiler flags are handled by configure.py itself
-	#filter-lto
+	filter-lto
 	# The warnings are *so* noisy and make build.logs massive
 	append-cxxflags $(test-flags-CXX -Wno-template-id-cdtor)
 	append-cxxflags $(test-flags-CXX -Wno-nullability-completeness)
