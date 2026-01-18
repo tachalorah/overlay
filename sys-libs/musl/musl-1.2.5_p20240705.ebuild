@@ -104,7 +104,7 @@ src_prepare() {
 }
 
 src_configure() {
-	strip-flags
+	strip-flags && filter-lto
 	tc-getCC ${CTARGET}
 
 	just_headers && export CC=true
