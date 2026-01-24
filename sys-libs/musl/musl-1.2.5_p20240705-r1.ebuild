@@ -45,22 +45,29 @@ else
 fi
 
 PATCHES=(
+	"${FILESDIR}"/0001-add-stub-for-pthread_mutexattr_setprioceiling.patch
 	"${FILESDIR}"/0001-implement-necessary-bits-for-musl-integration.patch
 	"${FILESDIR}"/0001-plumb-in-support-for-externally-provided-allocator-l.patch
+	"${FILESDIR}"/LoongArch64-add-new-reloc-types-and-NT_LOONGARCH_HW_.patch
+	"${FILESDIR}"/__NR_riscv_hwprobe.patch
 	"${FILESDIR}"/default-locpath.patch
 	"${FILESDIR}"/fix-bind-textdomain-codeset.patch
 	"${FILESDIR}"/iconv-001.patch
 	"${FILESDIR}"/iconv-002.patch
+	"${FILESDIR}"/isatty-glibc-align.patch
 	"${FILESDIR}"/libcc-compiler-rt.patch
 	"${FILESDIR}"/llvm18.patch
 	"${FILESDIR}"/loongarch-tlsdesc.patch
+	"${FILESDIR}"/loongarch64-Add-lsx-and-lasx-vector-structure-defini.patch
+	"${FILESDIR}"/loongarch64-add-bits-hwcap.h.patch
+	"${FILESDIR}"/loongarch64-add-fpu-and-simd-context-to-signal.h.patch
+	"${FILESDIR}"/loongarch64-fix-zero-len-extcontext.patch
 	"${FILESDIR}"/lto.patch
-	"${FILESDIR}"/memcpy.patch
 	"${FILESDIR}"/mimalloc-errno.patch
 	"${FILESDIR}"/mimalloc-tweak-options.patch
 	"${FILESDIR}"/plt.patch
 	"${FILESDIR}"/ppc-alt.patch
-	"${FILESDIR}"/riscv-hwprobe.patch
+	"${FILESDIR}"/stdio-skip-empty-iovec-when-buffering-is-disabled.patch
 )
 
 just_headers() {
@@ -101,6 +108,7 @@ src_prepare() {
 	cp "${FILESDIR}"/mimalloc-verify-syms.sh \
 		"${S}"/mimalloc-verify-syms.sh || die
 	rm "${S}"/src/string/x86_64/memcpy.s || die
+	rm "${S}"/src/string/x86_64/memmove.s || die
 }
 
 src_configure() {
