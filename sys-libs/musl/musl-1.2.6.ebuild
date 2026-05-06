@@ -8,8 +8,8 @@ inherit crossdev flag-o-matic toolchain-funcs prefix
 DESCRIPTION="Light, fast and, simple C library focused on standards-conformance and safety"
 HOMEPAGE="https://musl.libc.org"
 
-MUSL_COMMIT="dd1e63c3638d5f9afb857fccf6ce1415ca5f1b8b"
-MIMALLOC_VER="2.1.7"
+MUSL_COMMIT="9fa28ece75d8a2191de7c5bb53bed224c5947417"
+MIMALLOC_VER="2.2.7"
 GETENT_COMMIT="93a08815f8598db442d8b766b463d0150ed8e2ab"
 GETENT_FILE="musl-getent-${GETENT_COMMIT}.c"
 
@@ -48,26 +48,21 @@ PATCHES=(
 	"${FILESDIR}"/0001-add-stub-for-pthread_mutexattr_setprioceiling.patch
 	"${FILESDIR}"/0001-implement-necessary-bits-for-musl-integration.patch
 	"${FILESDIR}"/0001-plumb-in-support-for-externally-provided-allocator-l.patch
-	"${FILESDIR}"/LoongArch64-add-new-reloc-types-and-NT_LOONGARCH_HW_.patch
-	"${FILESDIR}"/__NR_riscv_hwprobe.patch
+	"${FILESDIR}"/001-6f6bd4a1896ba0be19168abc1346c8c7e3851709.patch
+	"${FILESDIR}"/002-0572555dab1d1e10b5f7351a005ec588cab41e25.patch
+	"${FILESDIR}"/003-40acb04b2c1291f7d3091c61080109da11eea48b.patch
+	"${FILESDIR}"/004-67219f0130ec7c876ac0b299046460fad31caabf.patch
+	"${FILESDIR}"/005-d2f20c49dfb556d9096251aa0acd92ca907b3400.patch
+	"${FILESDIR}"/006-228da39e38c1cae13cbe637e771412c1984dba5d.patch
+	"${FILESDIR}"/007-b3291b9a9f77f1f993d2b4f8c68a26cf09221ae7.patch
+	"${FILESDIR}"/008-5122f9f3c99fee366167c5de98b31546312921ab.patch
 	"${FILESDIR}"/default-locpath.patch
-	"${FILESDIR}"/fix-bind-textdomain-codeset.patch
-	"${FILESDIR}"/iconv-001.patch
-	"${FILESDIR}"/iconv-002.patch
-	"${FILESDIR}"/isatty-glibc-align.patch
 	"${FILESDIR}"/libcc-compiler-rt.patch
-	"${FILESDIR}"/llvm18.patch
-	"${FILESDIR}"/loongarch-tlsdesc.patch
-	"${FILESDIR}"/loongarch64-Add-lsx-and-lasx-vector-structure-defini.patch
-	"${FILESDIR}"/loongarch64-add-bits-hwcap.h.patch
-	"${FILESDIR}"/loongarch64-add-fpu-and-simd-context-to-signal.h.patch
-	"${FILESDIR}"/loongarch64-fix-zero-len-extcontext.patch
 	"${FILESDIR}"/lto.patch
 	"${FILESDIR}"/mimalloc-errno.patch
-	"${FILESDIR}"/mimalloc-tweak-options.patch
+	"${FILESDIR}"/nxthdr.patch
 	"${FILESDIR}"/plt.patch
 	"${FILESDIR}"/ppc-alt.patch
-	"${FILESDIR}"/stdio-skip-empty-iovec-when-buffering-is-disabled.patch
 )
 
 just_headers() {
