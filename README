@@ -3,3 +3,5 @@ This is my little Gentoo overlay. It (by now) provides these packages:
 - games-emulation/nestopiarta: 108Pi's fork of Nestopia UE with frame counter
   and input display
 - sys-libs/musl: Chimera's patched version, with mimalloc in place of mallocng.
+- llvm-core/clang-common: with USE=!transitive-headers to add
+  -D_LIBCPP_REMOVE_TRANSITIVE_INCLUDES to gentoo-hardened.cfg
