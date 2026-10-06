@@ -172,16 +172,17 @@ src_install() {
 		--unwindlib=$(usex default-compiler-rt libunwind libgcc)
 		--stdlib=$(usex default-libcxx libc++ libstdc++)
 	EOF
+
 	if use default-lld; then
-		newins - gentoo-runtimes.cfg <<-EOF
+		cat >> "${ED}/etc/clang/gentoo-runtimes.cfg" <<-EOF || die
 			-fuse-ld=lld
 		EOF
 	elif use default-mold; then
-		newins - gentoo-runtimes.cfg <<-EOF
+		cat >> "${ED}/etc/clang/gentoo-runtimes.cfg" <<-EOF || die
 			-fuse-ld=mold
 		EOF
 	else
-		newins - gentoo-runtimes.cfg <<-EOF
+		cat >> "${ED}/etc/clang/gentoo-runtimes.cfg" <<-EOF || die
 			-fuse-ld=bfd
 		EOF
 	fi

@@ -29,6 +29,10 @@ RDEPEND="
 	)
 	libcxx? ( >=llvm-runtimes/libcxx-${PV}[${MULTILIB_USEDEP}] )
 	openmp? ( >=llvm-runtimes/openmp-${PV}[${MULTILIB_USEDEP}] )
+	default-lld? (
+		llvm-core/clang-common[default-lld]
+		llvm-core/clang-linker-config[default-lld]
+	)
 
 	llvm-core/clang-common
 

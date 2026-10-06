@@ -29,15 +29,15 @@ src_install() {
 
 	EOF
 	if use default-lld; then
-		newins - gentoo-linker.cfg <<-EOF
+		cat >> "${ED}/etc/clang/${SLOT}/gentoo-linker.cfg" <<-EOF
 			-fuse-ld=lld
 		EOF
 	elif use default-mold; then
-		newins - gentoo-linker.cfg <<-EOF
+		cat >> "${ED}/etc/clang/${SLOT}/gentoo-linker.cfg" <<-EOF
 			-fuse-ld=mold
 		EOF
 	else
-		newins - gentoo-linker.cfg <<-EOF
+		cat >> "${ED}/etc/clang/${SLOT}/gentoo-linker.cfg" <<-EOF
 			-fuse-ld=bfd
 		EOF
 	fi
